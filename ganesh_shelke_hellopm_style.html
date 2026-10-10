@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f5f7">
+<meta name="description" content="Ganesh Shelke — Product management, data science and AI/ML. A product portfolio inspired by HelloPM’s energetic product-community style.">
+<title>Ganesh Shelke — Product, Data & AI</title>
+<style>
+  :root {
+    --bg: #fbf9ff;
+    --surface: rgba(255,255,255,.86);
+    --card: #fff;
+    --ink: #17132e;
+    --muted: #6c6683;
+    --blue: #5b35d5;
+    --purple: #5b35d5;
+    --yellow: #ffe45e;
+    --line: rgba(36,24,75,.13);
+    --radius: 22px;
+    --shadow: 0 10px 28px rgba(54,34,116,.08);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+  body {
+    margin: 0; color: var(--ink); background: var(--bg);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+      "Segoe UI", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased; line-height: 1.55;
+  }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .nav-wrap { position: sticky; top: 0; z-index: 20; background: rgba(251,249,255,.88); backdrop-filter: saturate(180%) blur(22px); border-bottom: 1px solid rgba(36,24,75,.10); }
+  nav { max-width: 1120px; margin: auto; padding: 0 28px; height: 54px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .brand { color: var(--ink); font-weight: 650; letter-spacing: -.035em; font-size: 15px; white-space: nowrap; }
+  .nav-links { display: flex; align-items: center; gap: 25px; font-size: 12px; }
+  .nav-links a { color: #48415f; }
+  .nav-links .contact-link { background: var(--purple); color: white; padding: 7px 14px; border-radius: 99px; }
+  main { overflow: hidden; }
+  .hero { max-width: 1120px; margin: auto; padding: 88px 28px 68px; text-align: center; }
+  .eyebrow { color: var(--muted); font-size: 14px; font-weight: 750; letter-spacing: .04em; margin: 0 0 18px; }
+  h1 { font-size: clamp(48px, 8.2vw, 88px); line-height: .99; letter-spacing: -.075em; font-weight: 700; margin: 0; }
+  .gradient-text { color: #5b35d5; background: linear-gradient(100deg,#5b35d5 10%,#8a58e8 58%,#e55a9f 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-sub { max-width: 700px; margin: 24px auto 0; font-size: clamp(19px,2.4vw,25px); line-height: 1.35; letter-spacing: -.035em; color: #515154; }
+  .hero-meta { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
+  .hero-actions { display: flex; justify-content: center; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 30px; font-size: 15px; }
+  .button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 999px; padding: 11px 19px; background: var(--purple); color: #fff; font-weight: 500; box-shadow: 0 5px 0 rgba(47,26,112,.16); }
+  .button:hover { background: #4724bd; text-decoration: none; }
+  .text-link { display: inline-flex; align-items: center; gap: 5px; }
+  .hero-panel { max-width: 1064px; margin: 0 auto 24px; padding: 0 28px; }
+  .feature { background: #21134f; color: #fff; border-radius: 30px; padding: 42px 44px; display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; align-items: center; min-height: 250px; }
+  .feature .kicker { color: #ffe45e; font-size: 12px; text-transform: uppercase; letter-spacing: .12em; font-weight: 650; }
+  .feature h2 { font-size: clamp(28px,4vw,42px); line-height: 1.08; letter-spacing: -.055em; margin: 10px 0 12px; }
+  .feature p { color: #e0daf6; max-width: 580px; margin: 0; font-size: 16px; }
+  .feature-mark { width: 180px; height: 180px; justify-self: center; border-radius: 50%; background: radial-gradient(circle at 35% 28%,#fff4a8 0,#ffe45e 24%,#ffb648 48%,#5b35d5 75%); box-shadow: inset -15px -20px 35px rgba(39,18,89,.18), 0 0 70px rgba(255,228,94,.14); position: relative; }
+  .feature-mark:after { content:""; position:absolute; inset: 20px 33px 42px 22px; border-radius:50%; border:1px solid rgba(255,255,255,.42); transform:rotate(-32deg); }
+  .section { max-width: 1120px; padding: 80px 28px; margin: auto; }
+  .section-heading { display:flex; align-items:end; justify-content:space-between; gap:20px; margin-bottom: 28px; }
+  .section-label { color: var(--muted); font-size: 13px; font-weight: 650; text-transform: uppercase; letter-spacing: .11em; margin: 0 0 8px; }
+  h2.section-title { font-size: clamp(34px,5vw,52px); line-height:1.05; letter-spacing:-.06em; margin:0; }
+  .section-intro { max-width: 410px; margin:0; color:var(--muted); font-size:15px; }
+  .about-grid { display:grid; grid-template-columns: 1.1fr .9fr; gap:20px; }
+  .card { background: var(--card); border:1px solid rgba(36,24,75,.08); border-radius:var(--radius); padding:30px; box-shadow:var(--shadow); }
+  .about-copy { font-size:19px; letter-spacing:-.02em; line-height:1.6; margin:0; }
+  .about-copy strong { font-weight:650; }
+  .skill-list { display:flex; flex-wrap:wrap; gap:9px; margin-top:22px; }
+  .pill { display:inline-flex; border:1px solid var(--line); background:#f3efff; padding:7px 12px; border-radius:99px; color:#424245; font-size:13px; }
+  .stats { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .stat { background:#f3efff; border-radius:18px; padding:20px; min-height:130px; }
+  .stat strong { display:block; font-size:30px; letter-spacing:-.06em; line-height:1.1; margin-bottom:9px; }
+  .stat span { color:var(--muted); font-size:13px; }
+  .experience-list { display:grid; gap:14px; }
+  .job { display:grid; grid-template-columns: 190px 1fr; gap:26px; padding:26px 28px; background:white; border:1px solid rgba(36,24,75,.08); border-radius:22px; box-shadow:var(--shadow); }
+  .job-date { font-size:13px; color:var(--muted); padding-top:4px; }
+  .job h3 { margin:0; font-size:21px; letter-spacing:-.035em; line-height:1.25; }
+  .job-role { margin:4px 0 0; font-weight:550; color:#424245; }
+  .job-place { color:var(--muted); font-size:13px; margin:3px 0 13px; }
+  .job p { color:#515154; margin:0; font-size:15px; max-width:700px; }
+  .job .tag-row { display:flex; flex-wrap:wrap; gap:7px; margin-top:14px; }
+  .job .tag { color:#626267; background:#f3efff; border-radius:7px; padding:4px 8px; font-size:11px; }
+  .education-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+  .edu { background:white; padding:24px; border-radius:20px; border:1px solid rgba(36,24,75,.08); box-shadow:var(--shadow); }
+  .edu .edu-type { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.1em; font-weight:650; }
+  .edu h3 { font-size:18px; line-height:1.3; letter-spacing:-.025em; margin:10px 0 7px; }
+  .edu p { color:#515154; font-size:14px; margin:0; }
+  .edu .year { display:block; color:var(--muted); font-size:12px; margin-top:12px; }
+  .bottom-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .mini-heading { font-size:22px; letter-spacing:-.04em; margin:0 0 18px; }
+  .cert-list { display:grid; gap:13px; padding:0; margin:0; list-style:none; }
+  .cert-list li { display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#424245; }
+  .check { color:var(--blue); font-weight:700; }
+  .language-row { display:flex; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--line); font-size:14px; }
+  .language-row:last-child { border-bottom:0; }
+  .language-row span:last-child { color:var(--muted); }
+  .contact { max-width:1064px; padding:0 28px; margin:20px auto 80px; }
+  .contact-card { background:#fff0a6; border-radius:30px; padding:52px 44px; text-align:center; }
+  .contact-card h2 { font-size:clamp(34px,5vw,54px); line-height:1.05; letter-spacing:-.065em; margin:0; }
+  .contact-card p { color:#554b70; margin:16px auto 24px; max-width:490px; }
+  footer { max-width:1120px; margin:auto; padding:22px 28px 36px; display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:12px; border-top:1px solid var(--line); }
+  .reveal { opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce) { html{scroll-behavior:auto} .reveal{opacity:1;transform:none;transition:none} }
+  @media (max-width:760px) {
+    nav { padding:0 18px; } .nav-links { gap:14px; } .nav-links a:not(.contact-link) { display:none; }
+    .hero { padding:76px 22px 58px; } .hero-panel,.contact { padding:0 18px; }
+    .feature { grid-template-columns:1fr; padding:32px 26px; text-align:center; gap:24px; }
+    .feature-mark { width:130px; height:130px; grid-row:1; }
+    .section { padding:62px 18px; } .section-heading { display:block; } .section-intro { margin-top:14px; }
+    .about-grid,.bottom-grid { grid-template-columns:1fr; } .job { grid-template-columns:1fr; gap:8px; padding:23px; }
+    .job-date { order:2; padding:0; } .job > div:nth-child(2) { order:1; }
+    .education-grid { grid-template-columns:1fr; } .contact-card { padding:40px 24px; }
+    footer { padding:22px 18px 30px; flex-direction:column; }
+  }
+  @media (max-width:390px) { .hero-actions { gap:16px; } .stats { grid-template-columns:1fr 1fr; } .stat { padding:15px; } .stat strong { font-size:25px; } }
+</style>
+</head>
+<body>
+<div class="nav-wrap">
+  <nav aria-label="Main navigation">
+    <a class="brand" href="#top">Ganesh Shelke<span style="color:var(--blue)">.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a>
+      <a class="contact-link" href="#contact">Let’s talk</a>
+    </div>
+  </nav>
+</div>
+<main id="top">
+  <header class="hero">
+    <p class="eyebrow"><span style="display:inline-block;background:#fff0a6;color:#39217c;padding:7px 13px;border-radius:999px">✦ Product · Data Science · AI/ML</span></p>
+    <h1>Ideas into impact.<br><span class="gradient-text">Built around people.</span></h1>
+    <p class="hero-sub">I’m Ganesh Shelke — a product manager who brings together customer empathy, data, and technology to build better experiences.</p>
+    <p class="hero-meta">Pune Division, Maharashtra, India</p>
+    <div class="hero-actions">
+      <a class="button" href="#experience">Explore my work <span aria-hidden="true">↗</span></a>
+      <a class="text-link" href="mailto:shelke49@gmail.com">Get in touch <span aria-hidden="true">→</span></a>
+      <a class="text-link" href="https://www.linkedin.com/in/ganeshbshelke" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    </div>
+  </header>
+
+  <div class="hero-panel reveal">
+    <div class="feature">
+      <div>
+        <span class="kicker">A little about my approach</span>
+        <h2>Thoughtful products.<br>Meaningful outcomes.</h2>
+        <p>I enjoy translating complex problems into clear requirements, useful workflows, and scalable systems — working closely with engineering and operations along the way.</p>
+      </div>
+      <div class="feature-mark" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <section class="section" id="about">
+    <div class="section-heading reveal">
+      <div><p class="section-label">✦ 01 — About</p><h2 class="section-title">Curious by nature.<br>Product-minded by design.</h2></div>
+      <p class="section-intro">A mix of product thinking, technical curiosity, and a drive to make everyday work better.</p>
+    </div>
+    <div class="about-grid">
+      <article class="card reveal">
+        <p class="about-copy">I’m passionate about <strong>driving innovation and delivering customer value.</strong> With skills in Python and R, and a strong interest in data science and AI/ML, I’m always looking for new challenges and opportunities to learn. I like exploring how emerging technology can solve real-world problems.</p>
+        <div class="skill-list"><span class="pill">Product strategy</span><span class="pill">Workflow management</span><span class="pill">Requirements gathering</span><span class="pill">Prompt design</span><span class="pill">Python</span><span class="pill">R</span><span class="pill">Data storytelling</span></div>
+      </article>
+      <div class="card reveal">
+        <div class="stats">
+          <div class="stat"><strong>Product</strong><span>From problem discovery to delivery</span></div>
+          <div class="stat"><strong>Data</strong><span>Analysis, ETL and visualisation</span></div>
+          <div class="stat"><strong>AI / ML</strong><span>Curiosity for practical applications</span></div>
+          <div class="stat"><strong>People</strong><span>Customer and team-centred thinking</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="section-heading reveal">
+      <div><p class="section-label">✦ 02 — Experience</p><h2 class="section-title">Where I’ve made<br>things happen.</h2></div>
+      <p class="section-intro">Experience spanning product management, analytics, software testing, and customer-facing operations.</p>
+    </div>
+    <div class="experience-list">
+      <article class="job reveal">
+        <div class="job-date">May 2024 — June 2026<br>Bengaluru, India</div>
+        <div><h3>Udhyam Learning Foundation</h3><p class="job-role">Senior Specialist — Product</p><p class="job-place">Product Management</p><p>Driving internal and employee-facing tools across Admin Panel, Helpdesk, MIS, verification, and Student Portfolio workflows. Partnering with engineering and operations to define requirements, improve user journeys, and build scalable systems supporting program delivery across multiple states.</p><div class="tag-row"><span class="tag">Internal tools</span><span class="tag">Workflow design</span><span class="tag">Cross-functional delivery</span></div></div>
+      </article>
+      <article class="job reveal">
+        <div class="job-date">Jan 2024 — Mar 2024</div>
+        <div><h3>Raptor Supplies Limited</h3><p class="job-role">Product Manager</p><p class="job-place">Product Management</p></div>
+      </article>
+      <article class="job reveal">
+        <div class="job-date">Apr 2023 — Apr 2024</div>
+        <div><h3>NextLeap</h3><p class="job-role">Product Management Fellow</p><p class="job-place">Product Management Fellowship</p></div>
+      </article>
+      <article class="job reveal">
+        <div class="job-date">Apr 2023 — May 2023</div>
+        <div><h3>SourceFuse Technologies</h3><p class="job-role">Product Management Intern</p><p class="job-place">Product Management</p></div>
+      </article>
+      <article class="job reveal">
+        <div class="job-date">Jul 2016 — Feb 2022<br>Pune / Pimpri-Chinchwad</div>
+        <div><h3>Aseem Foundation — India</h3><p class="job-role">Volunteer</p></div>
+      </article>
+      <article class="job reveal">
+        <div class="job-date">Sep 2020 — Dec 2021<br>India</div>
+        <div><h3>Aura Semiconductor</h3><p class="job-role">Software Test Engineer</p><p>Worked on manual and automated software testing, and wrote scripts for data extraction from Cadence software.</p><div class="tag-row"><span class="tag">Software testing</span><span class="tag">Automation</span><span class="tag">Data extraction</span></div></div>
+      </article>
+      <article class="job reveal">
+        <div class="job-date">Jan 2020 — Aug 2020<br>India</div>
+        <div><h3>Quilt.AI</h3><p class="job-role">Data Analyst</p><p>Experimented with ETL processes for Twitter and Google Trends data, created visualisation dashboards using D3.js and Python, and explored text analysis using Rapid Automatic Keyword Extraction (RAKE).</p><div class="tag-row"><span class="tag">ETL</span><span class="tag">D3.js</span><span class="tag">Python</span><span class="tag">Text analysis</span></div></div>
+      </article>
+      <article class="job reveal">
+        <div class="job-date">Feb 2016 — May 2016<br>Pune / Pimpri-Chinchwad</div>
+        <div><h3>Thomas Cook India Limited</h3><p class="job-role">Forex Executive</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <div class="section-heading reveal">
+      <div><p class="section-label">✦ 03 — Education</p><h2 class="section-title">Built on a foundation<br>of lifelong learning.</h2></div>
+      <p class="section-intro">Engineering fundamentals paired with focused learning in AI/ML, product management, and entrepreneurship.</p>
+    </div>
+    <div class="education-grid">
+      <article class="edu reveal"><span class="edu-type">Fellowship</span><h3>Plaksha University</h3><p>Tech Leaders Fellowship — AI/ML, Product Management, Entrepreneurship</p><span class="year">Aug 2022 — Aug 2023</span></article>
+      <article class="edu reveal"><span class="edu-type">Bachelor’s degree</span><h3>Savitribai Phule Pune University</h3><p>Bachelor of Engineering (B.E.), Electronics and Communications Engineering</p><span class="year">2011 — 2015</span></article>
+      <article class="edu reveal"><span class="edu-type">Higher secondary</span><h3>Tuljaram Chaturchand College, Baramati</h3><p>HSC, Science</p><span class="year">2009 — 2011</span></article>
+      <article class="edu reveal"><span class="edu-type">Secondary school</span><h3>B. V. Rajebhosale Higher Secondary School, Khanota</h3><p>SSC</p></article>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="bottom-grid">
+      <article class="card reveal">
+        <p class="section-label">Learning</p><h3 class="mini-heading">Certifications</h3>
+        <ul class="cert-list">
+          <li><span class="check">✓</span><span>Data Science Hands-On with Open Source Tools</span></li>
+          <li><span class="check">✓</span><span>PH125.2x: Data Science — Visualization</span></li>
+          <li><span class="check">✓</span><span>PH125.6x: Data Science — Wrangling</span></li>
+          <li><span class="check">✓</span><span>PH125.8x: Data Science — Machine Learning</span></li>
+          <li><span class="check">✓</span><span>FC1x: Fat Chance — Probability from the Ground Up</span></li>
+        </ul>
+      </article>
+      <article class="card reveal">
+        <p class="section-label">Beyond work</p><h3 class="mini-heading">Languages</h3>
+        <div class="language-row"><span>Marathi</span><span>Language</span></div>
+        <div class="language-row"><span>English</span><span>Language</span></div>
+        <div class="language-row"><span>Spanish (Español)</span><span>Language</span></div>
+        <div class="language-row"><span>Hindi</span><span>Language</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="contact reveal" id="contact">
+    <div class="contact-card">
+      <p class="section-label">Have a good problem to solve?</p>
+      <h2>Let’s make something<br>meaningful.</h2>
+      <p>Open to conversations about product, data, AI/ML, and opportunities to create useful, thoughtful experiences.</p>
+      <a class="button" href="mailto:shelke49@gmail.com">Email Ganesh <span aria-hidden="true">↗</span></a>
+      <p style="font-size:13px;margin-bottom:0"><a href="https://www.linkedin.com/in/ganeshbshelke" target="_blank" rel="noopener noreferrer">Connect on LinkedIn →</a></p>
+    </div>
+  </section>
+</main>
+<footer><span>© <span id="year">2026</span> Ganesh Shelke</span><span>Designed with clarity, care, and a little curiosity.</span></footer>
+<script>
+  // Small, self-contained enhancements; the page works without JavaScript too.
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    items.forEach(item => observer.observe(item));
+  } else {
+    items.forEach(item => item.classList.add('visible'));
+  }
+</script>
+</body>
+</html>
